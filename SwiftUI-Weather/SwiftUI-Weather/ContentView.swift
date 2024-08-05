@@ -16,7 +16,9 @@ struct ContentView: View {
             BackgroundView(isNight: isNight)
             
             VStack {
-                CityTextView(cityName: "Cupertino, CA")
+                NavigationLink(destination: CityListView()) {
+                    CityTextView(cityName: "Cupertino, CA")
+                }
                 
                 MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill",
                                       temperature: 76)
@@ -56,6 +58,8 @@ struct ContentView: View {
                 Spacer()
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(true)
     }
 }
 
@@ -114,6 +118,8 @@ struct CityTextView: View {
             .font(.system(size: 32, weight: .medium, design: .default))
             .foregroundColor(.white)
             .padding()
+            .background(Color.blue.opacity(0.3))
+            .cornerRadius(10)
     }
 }
 
