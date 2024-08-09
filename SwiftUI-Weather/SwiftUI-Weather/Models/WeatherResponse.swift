@@ -10,6 +10,11 @@ import Foundation
 // MARK: - WeatherResponse
 struct WeatherResponse: Codable {
     let list: [WeatherItem]
+    let city: CityInfo
+}
+
+struct CityInfo: Codable {
+    let name: String
 }
 
 // MARK: - WeatherItem

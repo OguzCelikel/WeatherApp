@@ -21,15 +21,18 @@ struct CityListView: View {
                 Text(city.name) // Display the city name
                     .font(.system(size: 16))
                     .padding(8)
+                Spacer() // Ensure that the HStack takes up full width
             }
+            .contentShape(Rectangle()) // Make the entire HStack tappable
             .onTapGesture {
                 selectedCity = city
                 presentationMode.wrappedValue.dismiss()
             }
         }
-        .navigationTitle("Select a City 🏙️")
+        .navigationTitle("Select a City")
     }
 }
+
 
 struct CityListView_Previews: PreviewProvider {
     static var previews: some View {
