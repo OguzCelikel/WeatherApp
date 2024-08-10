@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Lottie
 
 struct ContentView: View {
     
@@ -18,7 +17,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                BackgroundView()
+                BackgroundView(colors: weatherData == nil ? [Color.blue, Color.blue.opacity(0.3)] : backgroundColors())
                 VStack {
                     if isLoading {
                         Spacer()
@@ -30,7 +29,7 @@ struct ContentView: View {
                             let dailyWeather = extractDailyWeather(weatherData: weatherData)
                             
                             CityTextView(cityName: selectedCity.name)
-                            MainWeatherStatusView(imageName: "sun", temperature: dailyWeather.first?.temperature ?? 0)
+                            MainWeatherStatusView(imageName: dailyWeather.first?.imageName ?? "sun", temperature: dailyWeather.first?.temperature ?? 0)
                             Spacer()
                             
                             HStack(spacing: 20) {
@@ -58,7 +57,6 @@ struct ContentView: View {
             }
         }
     }
-    
     
     private func fetchWeather() {
         isLoading = true
@@ -90,15 +88,14 @@ struct ContentView: View {
         
         return filteredItems.map { item in
             let dayOfWeek = dayOfWeek(from: item.dt_txt) ?? "-"
-            // imageName = determineImageName(for: item.main.temp) // Function to determine the weather icon
             let tempMaxKelvin = item.main.temp
             let tempMaxCelcius = (tempMaxKelvin - 273.15)
             let weatherImage = determineImageName(for: item.weather.first?.id ?? 200)
+            print("day \(dayOfWeek) -> weatherImage: \(weatherImage)")
             return WeatherDay(date: item.dt_txt, dayOfWeek: dayOfWeek, imageName: weatherImage, temperature: Int(tempMaxCelcius))
         }
     }
     
-    // Function to get the day of the week from a date string
     private func dayOfWeek(from dateString: String) -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -114,53 +111,36 @@ struct ContentView: View {
     }
     
     private func determineImageName(for weatherId: Int) -> String {
+        let weatherItem = determineWeatherAssets(for: weatherId)
+        return (weatherItem.assets.imageName + "2")
+    }
+    
+    private func determineWeatherAssets(for weatherId: Int) -> WeatherType {
         switch weatherId {
-        case 200, 201, 202:
-            return ("thunderstorm_rain2")
-        case 210...232:
-            return ("thunderstorm2")
+        case 200...232:
+            return .thunderstorm
         case 300...321, 500...531:
-            //return ("rain2")
-            return("sun2")
+            return .drizzle
         case 600...622:
-            return ("snow2")
+            return .snow
         case 701...781:
-            return ("cloud2")
+            return .atmosphere
         case 800:
-            return ("sun2")
-        case 801:
-            //return ("cloud_sun2")
-            return("sun2")
-        case 802...804:
-            return ("cloud2")
+            return .clear
+        case 801...804:
+            return .clouds
         default:
-            return ("sun2")
+            return .unknown
         }
     }
     
-    private func determineWeatherAssets(for weatherId: Int) -> (String, [Color]) {
-            switch weatherId {
-            case 200, 201, 202:
-                return ("thunderstorm_rain", [Color.blue, Color.gray.opacity(0.7)])
-            case 210...232:
-                return ("thunderstorm", [Color.blue, Color.gray.opacity(0.7)])
-            case 300...321, 500...531:
-                return ("rain", [Color.blue, Color.gray.opacity(0.7)])
-            case 600...622:
-                return ("snow", [Color.gray.opacity(0.5), Color.black.opacity(0.5)])
-            case 701...781:
-                return ("cloud", [Color.blue, Color.gray.opacity(0.7)])
-            case 800:
-                return ("sun", [Color.yellow])
-            case 801:
-                return ("cloud_sun", [Color.blue, Color.blue.opacity(0.3)])
-            case 802...804:
-                return ("cloud", [Color.blue, Color.gray.opacity(0.7)])
-            default:
-                return ("sun", [Color.yellow])
-            }
+    private func backgroundColors() -> [Color] {
+        guard let weatherId = weatherData?.list.first?.weather.first?.id else {
+            return [Color.blue, Color.blue.opacity(0.3)]
         }
-    
+        let weatherItem = determineWeatherAssets(for: weatherId)
+        return weatherItem.assets.colors
+    }
 }
 
 
@@ -170,102 +150,6 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct WeatherDayView: View {
-    
-    var dayOfWeek: String
-    var imageName: String
-    var temperature: Int
-    
-    var body: some View {
-        VStack(spacing: 10) {
-            Text(dayOfWeek)
-                .font(.system(size: 16, weight: .medium, design: .default))
-                .foregroundColor(.white)
-            
-            LottieView(animationFileName: imageName, loopMode: .loop)
-                .frame(width: 40, height: 40)
-                .padding(6)
-                
-            
-            Text("\(temperature)°")
-                .font(.system(size: 28, weight: .medium))
-                .foregroundColor(.white)
-        }
-    }
-}
-
-
-struct BackgroundView: View {
-    var body: some View {
-        LinearGradient(
-            gradient: Gradient(colors: gradientColors()),
-            startPoint: .bottom,
-            endPoint: .top
-        )
-        .ignoresSafeArea()
-    }
-    private func gradientColors() -> [Color] {
-        return [Color.blue, Color.blue.opacity(0.3)]
-    }
-}
-
-struct CityTextView: View {
-    
-    var cityName: String
-    var body: some View {
-        HStack {
-            Text(cityName)
-                .font(.system(size: 32, weight: .medium, design: .default))
-                .foregroundColor(.white)
-                .padding()
-        }
-    }
-}
-
-struct MainWeatherStatusView: View {
-    
-    var imageName: String
-    var temperature: Int
-    
-    var body: some View {
-        VStack(spacing: 10) {
-            LottieView(animationFileName: imageName, loopMode: .loop)
-                .frame(width: 180, height: 180)
-                .padding(20)
-            
-            Text("\(temperature)°")
-                .font(.system(size: 70, weight: .medium))
-                .foregroundColor(.white)
-        }
-        .padding(.bottom, 40)
-    }
-}
-
-struct WeatherDay {
-    let date: String
-    let dayOfWeek: String
-    let imageName: String
-    let temperature: Int
-}
-
-
-struct LottieView: UIViewRepresentable {
-    
-    var animationFileName: String
-    let loopMode: LottieLoopMode
-    
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-        
-    }
-    
-    func makeUIView(context: Context) -> Lottie.LottieAnimationView {
-        let animationView = LottieAnimationView(name: animationFileName)
-        animationView.loopMode = loopMode
-        animationView.play()
-        animationView.contentMode = .scaleAspectFill
-        return animationView
-    }
-}
 
 /*
  Group 2xx: Thunderstorm

@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5600622A2C6792A9000F6A73 /* cloud_sun2.json in Resources */ = {isa = PBXBuildFile; fileRef = 560062292C6792A9000F6A73 /* cloud_sun2.json */; };
+		5600622C2C679344000F6A73 /* rain2.json in Resources */ = {isa = PBXBuildFile; fileRef = 5600622B2C679344000F6A73 /* rain2.json */; };
+		560062322C679AFF000F6A73 /* WeatherEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560062312C679AFF000F6A73 /* WeatherEnums.swift */; };
+		560062382C679E28000F6A73 /* HomeScreenViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560062372C679E28000F6A73 /* HomeScreenViews.swift */; };
+		5600623A2C679E8C000F6A73 /* WeatherDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560062392C679E8C000F6A73 /* WeatherDay.swift */; };
 		561F19B72C662F9E000CF687 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 561F19B62C662F9E000CF687 /* Lottie */; };
 		561F19BA2C662FC0000CF687 /* sun.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19B92C662FC0000CF687 /* sun.json */; };
 		561F19BE2C6637B2000CF687 /* sun2.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19BD2C6637B2000CF687 /* sun2.json */; };
 		561F19C02C663AAB000CF687 /* cloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19BF2C663AAB000CF687 /* cloud.json */; };
 		561F19C22C663B6A000CF687 /* cloud2.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19C12C663B6A000CF687 /* cloud2.json */; };
 		561F19CD2C6650CC000CF687 /* thunderstorm_rain2.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19C32C6650CB000CF687 /* thunderstorm_rain2.json */; };
-		561F19CE2C6650CC000CF687 /* rain2.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19C42C6650CB000CF687 /* rain2.json */; };
 		561F19CF2C6650CC000CF687 /* rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19C52C6650CB000CF687 /* rain.json */; };
 		561F19D02C6650CC000CF687 /* snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19C62C6650CB000CF687 /* snow.json */; };
 		561F19D12C6650CC000CF687 /* snow2.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19C72C6650CB000CF687 /* snow2.json */; };
 		561F19D22C6650CC000CF687 /* thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19C82C6650CB000CF687 /* thunderstorm.json */; };
-		561F19D32C6650CC000CF687 /* cloud_sun2.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19C92C6650CB000CF687 /* cloud_sun2.json */; };
 		561F19D42C6650CC000CF687 /* thunderstorm_rain.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19CA2C6650CC000CF687 /* thunderstorm_rain.json */; };
 		561F19D52C6650CC000CF687 /* cloud_sun.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19CB2C6650CC000CF687 /* cloud_sun.json */; };
 		561F19D62C6650CC000CF687 /* thunderstorm2.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19CC2C6650CC000CF687 /* thunderstorm2.json */; };
@@ -34,17 +37,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		560062292C6792A9000F6A73 /* cloud_sun2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cloud_sun2.json; path = ../../../../../../Downloads/cloud_sun2.json; sourceTree = "<group>"; };
+		5600622B2C679344000F6A73 /* rain2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rain2.json; path = ../../../../../../Downloads/rain2.json; sourceTree = "<group>"; };
+		560062312C679AFF000F6A73 /* WeatherEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEnums.swift; sourceTree = "<group>"; };
+		560062372C679E28000F6A73 /* HomeScreenViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViews.swift; sourceTree = "<group>"; };
+		560062392C679E8C000F6A73 /* WeatherDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDay.swift; sourceTree = "<group>"; };
 		561F19B92C662FC0000CF687 /* sun.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sun.json; path = ../../../../../../Downloads/sun.json; sourceTree = "<group>"; };
 		561F19BD2C6637B2000CF687 /* sun2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sun2.json; path = ../../../../../../Downloads/sun2.json; sourceTree = "<group>"; };
 		561F19BF2C663AAB000CF687 /* cloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cloud.json; path = ../../../../../../Downloads/cloud.json; sourceTree = "<group>"; };
 		561F19C12C663B6A000CF687 /* cloud2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cloud2.json; path = ../../../../../../Downloads/cloud2.json; sourceTree = "<group>"; };
 		561F19C32C6650CB000CF687 /* thunderstorm_rain2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = thunderstorm_rain2.json; path = ../../../../../../Downloads/thunderstorm_rain2.json; sourceTree = "<group>"; };
-		561F19C42C6650CB000CF687 /* rain2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rain2.json; path = ../../../../../../Downloads/rain2.json; sourceTree = "<group>"; };
 		561F19C52C6650CB000CF687 /* rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rain.json; path = ../../../../../../Downloads/rain.json; sourceTree = "<group>"; };
 		561F19C62C6650CB000CF687 /* snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = snow.json; path = ../../../../../../Downloads/snow.json; sourceTree = "<group>"; };
 		561F19C72C6650CB000CF687 /* snow2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = snow2.json; path = ../../../../../../Downloads/snow2.json; sourceTree = "<group>"; };
 		561F19C82C6650CB000CF687 /* thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = thunderstorm.json; path = ../../../../../../Downloads/thunderstorm.json; sourceTree = "<group>"; };
-		561F19C92C6650CB000CF687 /* cloud_sun2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cloud_sun2.json; path = ../../../../../../Downloads/cloud_sun2.json; sourceTree = "<group>"; };
 		561F19CA2C6650CC000CF687 /* thunderstorm_rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = thunderstorm_rain.json; path = ../../../../../../Downloads/thunderstorm_rain.json; sourceTree = "<group>"; };
 		561F19CB2C6650CC000CF687 /* cloud_sun.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cloud_sun.json; path = ../../../../../../Downloads/cloud_sun.json; sourceTree = "<group>"; };
 		561F19CC2C6650CC000CF687 /* thunderstorm2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = thunderstorm2.json; path = ../../../../../../Downloads/thunderstorm2.json; sourceTree = "<group>"; };
@@ -73,13 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5600622D2C67982C000F6A73 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				560062372C679E28000F6A73 /* HomeScreenViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		561F19B82C662FAD000CF687 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
 				561F19CB2C6650CC000CF687 /* cloud_sun.json */,
-				561F19C92C6650CB000CF687 /* cloud_sun2.json */,
+				560062292C6792A9000F6A73 /* cloud_sun2.json */,
 				561F19C52C6650CB000CF687 /* rain.json */,
-				561F19C42C6650CB000CF687 /* rain2.json */,
+				5600622B2C679344000F6A73 /* rain2.json */,
 				561F19C62C6650CB000CF687 /* snow.json */,
 				561F19C72C6650CB000CF687 /* snow2.json */,
 				561F19CA2C6650CC000CF687 /* thunderstorm_rain.json */,
@@ -132,6 +146,8 @@
 			children = (
 				56487E752C64EB4400DA11D8 /* CityModel.swift */,
 				5687AAA42C614FAD00EEBC1F /* WeatherResponse.swift */,
+				560062312C679AFF000F6A73 /* WeatherEnums.swift */,
+				560062392C679E8C000F6A73 /* WeatherDay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +171,7 @@
 		ED475A9A25485F8D005997DF /* SwiftUI-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				5600622D2C67982C000F6A73 /* Views */,
 				561F19B82C662FAD000CF687 /* LottieAnimations */,
 				56487E742C64EB3200DA11D8 /* Models */,
 				56487E722C64DFF600DA11D8 /* App */,
@@ -247,11 +264,11 @@
 				561F19BE2C6637B2000CF687 /* sun2.json in Resources */,
 				561F19C22C663B6A000CF687 /* cloud2.json in Resources */,
 				561F19D52C6650CC000CF687 /* cloud_sun.json in Resources */,
-				561F19D32C6650CC000CF687 /* cloud_sun2.json in Resources */,
+				5600622A2C6792A9000F6A73 /* cloud_sun2.json in Resources */,
+				5600622C2C679344000F6A73 /* rain2.json in Resources */,
 				ED475AA025485F8E005997DF /* Assets.xcassets in Resources */,
 				561F19C02C663AAB000CF687 /* cloud.json in Resources */,
 				561F19D62C6650CC000CF687 /* thunderstorm2.json in Resources */,
-				561F19CE2C6650CC000CF687 /* rain2.json in Resources */,
 				561F19BA2C662FC0000CF687 /* sun.json in Resources */,
 				561F19D42C6650CC000CF687 /* thunderstorm_rain.json in Resources */,
 				561F19D12C6650CC000CF687 /* snow2.json in Resources */,
@@ -270,8 +287,11 @@
 				56487E762C64EB4400DA11D8 /* CityModel.swift in Sources */,
 				ED475A9C25485F8E005997DF /* SwiftUI_WeatherApp.swift in Sources */,
 				ED475AAC25489E44005997DF /* WeatherButton.swift in Sources */,
+				560062322C679AFF000F6A73 /* WeatherEnums.swift in Sources */,
 				5687AAA52C614FAD00EEBC1F /* WeatherResponse.swift in Sources */,
 				56487E782C64EFD600DA11D8 /* WeatherService.swift in Sources */,
+				560062382C679E28000F6A73 /* HomeScreenViews.swift in Sources */,
+				5600623A2C679E8C000F6A73 /* WeatherDay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
