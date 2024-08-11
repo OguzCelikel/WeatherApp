@@ -9,18 +9,22 @@ import SwiftUI
 
 enum WeatherType {
     case thunderstorm
+    case thunderstormRain
     case drizzle
     case rain
     case snow
     case atmosphere
     case clear
     case clouds
+    case cloudSun
     case unknown
 
     var assets: (imageName: String, colors: [Color]) {
         switch self {
         case .thunderstorm:
             return ("thunderstorm", [Color.blue, Color.gray.opacity(0.7)])
+        case .thunderstormRain:
+            return ("thunderstorm_rain", [Color.blue, Color.gray.opacity(0.7)])
         case .drizzle, .rain:
             return ("rain", [Color.blue, Color.gray.opacity(0.7)])
         case .snow:
@@ -31,6 +35,8 @@ enum WeatherType {
             return ("sun", [Color.blue, Color.blue.opacity(0.3)])
         case .clouds:
             return ("cloud", [Color.blue, Color.gray.opacity(0.7)])
+        case .cloudSun:
+            return ("cloud_sun", [Color.blue, Color.blue.opacity(0.3)])
         case .unknown:
             return ("sun", [Color.blue, Color.blue.opacity(0.3)])
         }

@@ -27,6 +27,7 @@
 		561F19D62C6650CC000CF687 /* thunderstorm2.json in Resources */ = {isa = PBXBuildFile; fileRef = 561F19CC2C6650CC000CF687 /* thunderstorm2.json */; };
 		56487E762C64EB4400DA11D8 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487E752C64EB4400DA11D8 /* CityModel.swift */; };
 		56487E782C64EFD600DA11D8 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487E772C64EFD600DA11D8 /* WeatherService.swift */; };
+		5661FFC22C6894E40022EEE5 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5661FFC12C6894E40022EEE5 /* TestView.swift */; };
 		5687AAA52C614FAD00EEBC1F /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687AAA42C614FAD00EEBC1F /* WeatherResponse.swift */; };
 		5687AAA72C61516600EEBC1F /* CityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687AAA62C61516600EEBC1F /* CityListView.swift */; };
 		ED475A9C25485F8E005997DF /* SwiftUI_WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED475A9B25485F8E005997DF /* SwiftUI_WeatherApp.swift */; };
@@ -56,6 +57,7 @@
 		561F19CC2C6650CC000CF687 /* thunderstorm2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = thunderstorm2.json; path = ../../../../../../Downloads/thunderstorm2.json; sourceTree = "<group>"; };
 		56487E752C64EB4400DA11D8 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		56487E772C64EFD600DA11D8 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		5661FFC12C6894E40022EEE5 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		5687AAA42C614FAD00EEBC1F /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		5687AAA62C61516600EEBC1F /* CityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListView.swift; sourceTree = "<group>"; };
 		ED475A9825485F8D005997DF /* SwiftUI-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 			children = (
 				ED475A9D25485F8E005997DF /* ContentView.swift */,
 				5687AAA62C61516600EEBC1F /* CityListView.swift */,
+				5661FFC12C6894E40022EEE5 /* TestView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				ED475A9E25485F8E005997DF /* ContentView.swift in Sources */,
 				5687AAA72C61516600EEBC1F /* CityListView.swift in Sources */,
+				5661FFC22C6894E40022EEE5 /* TestView.swift in Sources */,
 				56487E762C64EB4400DA11D8 /* CityModel.swift in Sources */,
 				ED475A9C25485F8E005997DF /* SwiftUI_WeatherApp.swift in Sources */,
 				ED475AAC25489E44005997DF /* WeatherButton.swift in Sources */,

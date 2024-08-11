@@ -86,12 +86,14 @@ struct ContentView: View {
     private func extractDailyWeather(weatherData: WeatherResponse) -> [WeatherDay] {
         let filteredItems = weatherData.list.filter { $0.dt_txt.contains("12:00:00") }
         
+        print("City: \(weatherData.city.name)")
+        print("day \(filteredItems.first?.dt_txt ?? "day") -> weatherImage: \(filteredItems.first?.weather.first?.id ?? 200)")
         return filteredItems.map { item in
             let dayOfWeek = dayOfWeek(from: item.dt_txt) ?? "-"
             let tempMaxKelvin = item.main.temp
             let tempMaxCelcius = (tempMaxKelvin - 273.15)
             let weatherImage = determineImageName(for: item.weather.first?.id ?? 200)
-            print("day \(dayOfWeek) -> weatherImage: \(weatherImage)")
+            //print("day \(dayOfWeek) -> weatherImage: \(weatherImage)")
             return WeatherDay(date: item.dt_txt, dayOfWeek: dayOfWeek, imageName: weatherImage, temperature: Int(tempMaxCelcius))
         }
     }
@@ -117,17 +119,21 @@ struct ContentView: View {
     
     private func determineWeatherAssets(for weatherId: Int) -> WeatherType {
         switch weatherId {
-        case 200...232:
+        case 200...202:
+            return .thunderstormRain
+        case 203...232:
             return .thunderstorm
         case 300...321, 500...531:
-            return .drizzle
+            return .rain
         case 600...622:
             return .snow
         case 701...781:
             return .atmosphere
         case 800:
             return .clear
-        case 801...804:
+        case 801:
+            return .cloudSun
+        case 802...804:
             return .clouds
         default:
             return .unknown
