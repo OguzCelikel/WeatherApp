@@ -33,23 +33,12 @@ struct TestView: View {
                     ZStack {
                         Image(uiImage: bgImage)
                             .resizable()
-                            .aspectRatio(0.7, contentMode: .fit)
-                            .frame(height: height)
+                            .frame(width: UIScreen.screenWidth * 0.9, height: UIScreen.screenHeight * 0.6 + 70, alignment: .center)
                             .cornerRadius(30)
-                        
-                        LinearGradient(
-                            gradient: Gradient(colors: [Color.black.opacity(0.5), Color.black.opacity(0.5)]),
-                            startPoint: .bottomTrailing,
-                            endPoint: .topLeading
-                        )
-                        .frame(height: height)
-                        .cornerRadius(30)
-                        .mask(Image(uiImage: bgImage)
-                            .resizable()
-                            .aspectRatio(0.7, contentMode: .fit)
-                            .frame(height: height)
-                            .cornerRadius(30)
-                        ) // Ensure the gradient overlay follows the image's shape
+                            .overlay(
+                                Color.black.opacity(0.5)
+                                    .cornerRadius(30)
+                            )
                         
                         VStack {
                             LocationInfoView(location: "Los Angle, UK", time: "now, 08:24")
@@ -120,13 +109,16 @@ struct MusicView: View {
                 Text(songTitle)
                     .font(.headline)
                     .foregroundColor(.primary)
+                    .lineLimit(2)
                 Text(artistName)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                    .lineLimit(2)
             }
-
+            
         }
         .padding()
+        .frame(width: UIScreen.screenWidth * 0.9, height: 80, alignment: .leading)
         
         .background(Color.black.opacity(0.3)) // Opacity verilmiş arka plan
         .cornerRadius(12) // Köşeleri yuvarlatılmış
@@ -138,6 +130,12 @@ struct TestView_Previews: PreviewProvider {
     static var previews: some View {
         TestView()
     }
+}
+
+extension UIScreen{
+    static let screenWidth = UIScreen.main.bounds.size.width
+    static let screenHeight = UIScreen.main.bounds.size.height
+    static let screenSize = UIScreen.main.bounds.size
 }
 
 
